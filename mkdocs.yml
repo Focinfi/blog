@@ -1,0 +1,63 @@
+site_name: yoho yoho
+nav:
+plugins:
+  - tags:
+      enabled: true 
+      tags_file: tags.md
+  - search:
+      separator: '[\s\u200b\-]'  # https://squidfunk.github.io/mkdocs-material/blog/2022/05/05/chinese-search-support/
+  - blog:
+      blog_dir: .
+      blog_toc: true
+      post_dir: "{blog}/diary"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      categories: true
+      # categories_name: 分类
+      # archive_name: 日期
+      authors_file: "{blog}/.authors.yml"
+      archive_date_format: MMMM yyyy
+      archive_url_date_format: yyyy/MM
+  - info:
+      enabled: false
+      archive: false
+theme:
+  name: material 
+  language: zh
+  favicon: images/favicon.png
+  logo: images/favicon.png
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - navigation.instant
+    - navigation.instant.progress
+  palette:
+    primary: cyan #https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+markdown_extensions:
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

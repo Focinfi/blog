@@ -1,0 +1,7 @@
+authors:
+  frank:
+    name: frank        # Author name
+    description: developer # Author description
+    avatar: /images/avatar.png         # Author avatar
+    slug:           # Author profile slug
+    url:     https://github.com/focinfi       # Author website URL
